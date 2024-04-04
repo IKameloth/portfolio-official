@@ -1,6 +1,6 @@
 "use client";
 
-import { useSectionInView } from "@/lib/hooks";
+import { useSectionInView } from "@/hooks/useSectionInView";
 import React from "react";
 import SectionTitle from "./SectionTitle";
 import { skillsData } from "@/lib/data";

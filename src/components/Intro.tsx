@@ -7,8 +7,8 @@ import { FaHandSparkles } from "react-icons/fa6";
 import Link from "next/link";
 import { BsArrowRight, BsDownload, BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
-import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { useSectionInView } from "@/hooks/useSectionInView";
 
 const Intro = () => {
   const { ref } = useSectionInView("Home", 0.5);
@@ -31,27 +31,13 @@ const Intro = () => {
             }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="profile image"
-              width={192}
-              height={192}
-              quality={95}
-              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+              src="/profile-pic-removebg.png"
+              width={190}
+              height={190}
+              alt="Picture of the author"
+              className="w-42 h-42 rounded-full shadow-2xl "
               priority={true}
             />
-            <motion.span
-              className="absolute text-4xl bottom-0 right-0"
-              animate={{
-                rotate: [0, -10, 10, -10, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <FaHandSparkles color="yellow" />
-            </motion.span>
           </motion.div>
         </div>
       </div>

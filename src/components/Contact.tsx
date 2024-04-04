@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { useSectionInView } from "@/lib/hooks";
+import { useSectionInView } from "@/hooks/useSectionInView";
 import { sendEmail } from "@/actions/sendEmail";
 import toast from "react-hot-toast";
 import SectionTitle from "./SectionTitle";
