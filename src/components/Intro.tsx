@@ -46,11 +46,11 @@ const Intro = () => {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I&apos;m Camila Mattea.</span>{" "}
-        I&apos;m a <span className="font-bold">frontend developer</span> with{" "}
-        <span className="font-bold">+4 years</span> of experience. I enjoy
-        building <span className="italic">sites & apps</span>. My focus is{" "}
-        <span className="underline">ReactJS and NextJS</span>.
+        <span className="font-bold">Hello, I&apos;m Camilo Matteo.</span>{" "}
+        I&apos;m a <span className="font-bold">Web Developer</span> with{" "}
+        <span className="font-bold">+5 years</span> of experience. Passionate
+        about writing code and building{" "}
+        <span className="italic">sites & apps</span>.
       </motion.p>
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
@@ -77,6 +77,13 @@ const Intro = () => {
           Donwload CV{" "}
           <BsDownload className="opacity-70 group-hover:translate-x-1 transition delay-100" />
         </a>
+      </motion.div>
+      <motion.div
+        className="flex sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium mt-5"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+      >
         <a
           href="https://www.linkedin.com/in/camilo-matteo-98143619b/"
           target="_blank"

@@ -35,7 +35,7 @@ const UpButton = () => {
           borderRadius: "100%",
         }}
         href="/#home"
-        className="fixed bottom-5 right-5 bg-slate-200 dark:bg-slate-900 w-[3rem] h-[3rem] backdrop-blur-[0.5] border border-slate-300 dark:border-slate-800 shadow-2xl rounded-full flex items-center justify-center"
+        className="fixed rounded-full flex items-center justify-center bottom-5 right-5 bg-slate-200 dark:bg-slate-900 w-[3rem] h-[3rem] backdrop-blur-[0.5] border border-slate-300 dark:border-slate-800 shadow-2xl"
       >
         <BsArrowUp className="text-lg" />
       </motion.a>

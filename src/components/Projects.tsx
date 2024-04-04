@@ -11,7 +11,7 @@ const Projects = () => {
 
   return (
     <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
-      <SectionTitle>My projects</SectionTitle>
+      <SectionTitle>Projects</SectionTitle>
       <div>
         {projectsData.map((project, index) => (
           <React.Fragment key={index}>

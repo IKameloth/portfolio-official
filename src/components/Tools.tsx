@@ -1,7 +1,6 @@
 "use client";
 
 import { useSectionInView } from "@/hooks/useSectionInView";
-import React from "react";
 import SectionTitle from "./SectionTitle";
 import { skillsData } from "@/lib/data";
 import { motion } from "framer-motion";
@@ -20,15 +19,16 @@ const fadeInAnimationVariants = {
   }),
 };
 
-const Skills = () => {
-  const { ref } = useSectionInView("Skills");
+const Tools = () => {
+  const { ref } = useSectionInView("Tools");
+
   return (
     <section
       ref={ref}
-      id="skills"
+      id="tools"
       className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
     >
-      <SectionTitle>My skills</SectionTitle>
+      <SectionTitle>Tools i have used</SectionTitle>
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
         {skillsData.map((skill, index) => (
           <motion.li
@@ -50,4 +50,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default Tools;

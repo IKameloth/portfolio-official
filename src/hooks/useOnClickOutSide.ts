@@ -11,7 +11,7 @@ export function useOnClickOutSide<T extends HTMLElement = HTMLElement>(
 
       if (!element || element.contains((event.target as Node) || null)) return;
 
-      handler(event);
+      return handler(event);
     };
 
     document.addEventListener("mousedown", listener);

@@ -1,15 +1,18 @@
 "use client";
 
 import { LogoIconLight } from "@/icons/LogoIconLight";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import ThemeToggleButton from "../ThemeToggleButton";
 import { motion, useCycle } from "framer-motion";
-import { useDimensions } from "@/hooks/useDimensions";
 import Navigation from "./Navigation";
 import { MenuToggle } from "./MenuToggle";
 import { useTheme } from "@/context/theme-context";
 import { LogoIconDark } from "@/icons/LogoIconDark";
 import { useOnClickOutSide } from "@/hooks/useOnClickOutSide";
+import { useActiveSectionContext } from "@/context/active-section-context";
+import { links } from "@/lib/data";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const sidebar = {
   open: (height = 800) => ({
@@ -34,8 +37,6 @@ const sidebar = {
 const Header = () => {
   const { theme } = useTheme();
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const containerRef = useRef(null);
-  const { height } = useDimensions(containerRef);
 
   const handleOffLinks = () => {
     if (isOpen) return toggleOpen();
@@ -44,26 +45,31 @@ const Header = () => {
   const navRef = useRef<HTMLDivElement | null>(null);
   useOnClickOutSide(navRef, () => handleOffLinks());
 
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext();
+
   return (
     <>
-      <motion.div className="sticky z-50 bg-white bg-opacity-80  dark:bg-gray-900 w-full top-0 start-0 inset-x-0 h-16 border-b border-gray-200 dark:border-gray-600">
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        className="sticky z-50 bg-white bg-opacity-80  dark:bg-gray-900 w-full top-0 start-0 inset-x-0 h-16 border-b border-gray-200 dark:border-gray-600"
+      >
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between md:justify-evenly mx-auto p-3">
           <motion.nav
             className="inline-flex items-center w-10 h-10 justify-center text-sm border border-slate-200 rounded-lg md:hidden hover:bg-gray-300  dark:bg-slate-700 dark:border dark:border-slate-500"
             initial={false}
             animate={isOpen ? "open" : "closed"}
-            custom={height}
-            ref={containerRef}
+            ref={navRef}
           >
             <motion.div
               className="absolute top-0 left-0 -z-10 w-full h-auto bg-slate-200 dark:bg-slate-900"
               variants={sidebar}
-              ref={navRef}
             >
-              <Navigation onClose={() => toggleOpen()} theme={theme} />
+              <Navigation onClose={toggleOpen} theme={theme} />
             </motion.div>
             <MenuToggle
-              toggle={() => toggleOpen()}
+              toggle={toggleOpen}
               strokeColor={theme === "light" ? "#2e2e2e" : "#64748b"}
             />
           </motion.nav>
@@ -75,50 +81,50 @@ const Header = () => {
             {theme === "light" ? (
               <LogoIconLight className="w-[2.25rem] h-[2.25rem] rounded-full" />
             ) : (
-              <LogoIconDark className="w-[2.25rem] h-[2.25rem] rounded-full dark:bg-white" />
+              <LogoIconDark className="w-[2.25rem] h-[2.25rem] rounded-full dark:bg-gray-100" />
             )}
           </motion.a>
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <ThemeToggleButton className="flex items-center" />
           </div>
-          <div
-            className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-            id="navbar-sticky"
-          >
-            <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                  aria-current="page"
+          <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+            <ul className="flex flex-col p-4 md:p-0 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              {links.map((link) => (
+                <motion.li
+                  className="flex items-center justify-center relative"
+                  key={link.hash}
+                  initial={{ y: -100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
                 >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Contact
-                </a>
-              </li>
+                  <Link
+                    className={cn(
+                      "flex w-full items-center justify-center px-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
+                      {
+                        "text-gray-950 dark:text-gray-100":
+                          activeSection === link.name,
+                      }
+                    )}
+                    href={link.hash}
+                    onClick={() => {
+                      setActiveSection(link.name);
+                      setTimeOfLastClick(Date.now());
+                    }}
+                  >
+                    {link.name}
+                    {link.name === activeSection && (
+                      <motion.span
+                        className="rounded-full absolute inset-0 bg-gray-800 dark:bg-gray-100 h-1 mt-6"
+                        layoutId="activeSection"
+                        transition={{
+                          type: "spring",
+                          stiffness: 380,
+                          damping: 30,
+                        }}
+                      ></motion.span>
+                    )}
+                  </Link>
+                </motion.li>
+              ))}
             </ul>
           </div>
         </div>

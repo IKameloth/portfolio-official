@@ -19,7 +19,7 @@ export const MenuToggle = (props: any) => {
   const { toggle, strokeColor } = props;
 
   return (
-    <button onClick={toggle}>
+    <button onClick={() => toggle()}>
       <svg width="23" height="23" viewBox="0 0 23 23">
         <Path
           stroke={strokeColor}
