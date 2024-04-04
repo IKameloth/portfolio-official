@@ -31,7 +31,7 @@ const sidebar = {
   },
 };
 
-const HeaderPlus = () => {
+const Header = () => {
   const { theme } = useTheme();
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
@@ -123,37 +123,8 @@ const HeaderPlus = () => {
           </div>
         </div>
       </motion.div>
-      {/* <div
-        className={`fixed flex flex-col justify-center items-center z-10 top-0 right-0 h-full w-full bg-white text-black transition-transform duration-300 transform ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <button
-          className="absolute right-7 top-4 p-3"
-          onClick={() => handleDrawerToggle()}
-        >
-          <MdShieldMoon className="text-5xl" />
-        </button>
-        <ul className="flex flex-col justify-center items-center space-y-4">
-          <li className="text-3xl hover:text-blue-900 hover:font-semibold">
-            <a href="/#home">Home</a>
-          </li>
-        </ul>
-      </div> */}
-
-      {/* <motion.nav
-        className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 "
-        initial={false}
-        animate={isOpen ? "open" : "closed"}
-        custom={height}
-        ref={containerRef}
-      >
-        <motion.div className="background" variants={sidebar} />
-        <Navigation />
-        <MenuToggle toggle={() => handleToggle()} />
-      </motion.nav> */}
     </>
   );
 };
 
-export default HeaderPlus;
+export default Header;

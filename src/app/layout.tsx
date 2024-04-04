@@ -1,14 +1,13 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Header";
+import type { Metadata } from "next";
 import { ActiveSectionProvider } from "@/context/active-section-context";
 import { ThemeProvider } from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/Footer";
-import ThemeToggleButton from "@/components/ThemeToggleButton";
 import BackgroundColor from "@/components/BackgroundColor";
-import HeaderPlus from "@/components/navbar/HeaderPlus";
+import Header from "@/components/navbar/Header";
+import "./globals.css";
+import UpButton from "@/components/UpButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,11 +29,11 @@ export default function RootLayout({
         <BackgroundColor />
         <ThemeProvider>
           <ActiveSectionProvider>
-            {/* <Header /> */}
-            <HeaderPlus />
+            <Header />
             {children}
             <Footer />
             <Toaster />
+            <UpButton />
           </ActiveSectionProvider>
         </ThemeProvider>
       </body>
