@@ -1,7 +1,7 @@
 "use client";
 
 import { LogoIconLight } from "@/icons/LogoIconLight";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import ThemeToggleButton from "../ThemeToggleButton";
 import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "@/hooks/useDimensions";
@@ -9,6 +9,7 @@ import Navigation from "./Navigation";
 import { MenuToggle } from "./MenuToggle";
 import { useTheme } from "@/context/theme-context";
 import { LogoIconDark } from "@/icons/LogoIconDark";
+import { useOnClickOutSide } from "@/hooks/useOnClickOutSide";
 
 const sidebar = {
   open: (height = 800) => ({
@@ -36,14 +37,40 @@ const HeaderPlus = () => {
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
 
+  const handleOffLinks = () => {
+    if (isOpen) return toggleOpen();
+  };
+
+  const navRef = useRef<HTMLDivElement | null>(null);
+  useOnClickOutSide(navRef, () => handleOffLinks());
+
   return (
     <>
-      <motion.div className="z-[999] bg-white bg-opacity-80  dark:bg-gray-900 fixed w-full top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+      <motion.div className="sticky z-50 bg-white bg-opacity-80  dark:bg-gray-900 w-full top-0 start-0 inset-x-0 h-16 border-b border-gray-200 dark:border-gray-600">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between md:justify-evenly mx-auto p-3">
+          <motion.nav
+            className="inline-flex items-center w-10 h-10 justify-center text-sm border border-slate-200 rounded-lg md:hidden hover:bg-gray-300  dark:bg-slate-700 dark:border dark:border-slate-500"
+            initial={false}
+            animate={isOpen ? "open" : "closed"}
+            custom={height}
+            ref={containerRef}
+          >
+            <motion.div
+              className="absolute top-0 left-0 -z-10 w-full h-auto bg-slate-200 dark:bg-slate-900"
+              variants={sidebar}
+              ref={navRef}
+            >
+              <Navigation onClose={() => toggleOpen()} theme={theme} />
+            </motion.div>
+            <MenuToggle
+              toggle={() => toggleOpen()}
+              strokeColor={theme === "light" ? "#2e2e2e" : "#64748b"}
+            />
+          </motion.nav>
           <motion.a
             whileTap={{ scale: 0.9 }}
             href="/#home"
-            className="flex items-center space-x-3 rtl:space-x-reverse"
+            className="hidden md:flex items-center space-x-3 rtl:space-x-reverse"
           >
             {theme === "light" ? (
               <LogoIconLight className="w-[2.25rem] h-[2.25rem] rounded-full" />
@@ -53,24 +80,6 @@ const HeaderPlus = () => {
           </motion.a>
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <ThemeToggleButton className="flex items-center" />
-            <motion.nav
-              className="inline-flex items-center w-10 h-10 justify-center text-sm border border-slate-200 rounded-lg md:hidden hover:bg-gray-300  dark:bg-slate-700 dark:border dark:border-slate-500"
-              initial={false}
-              animate={isOpen ? "open" : "closed"}
-              custom={height}
-              ref={containerRef}
-            >
-              <motion.div
-                className="absolute top-0 left-0 -z-10 w-full h-auto bg-slate-200 dark:bg-slate-900"
-                variants={sidebar}
-              >
-                <Navigation onClose={() => toggleOpen()} />
-              </motion.div>
-              <MenuToggle
-                toggle={() => toggleOpen()}
-                strokeColor={theme === "light" ? "#2e2e2e" : "#64748b"}
-              />
-            </motion.nav>
           </div>
           <div
             className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
