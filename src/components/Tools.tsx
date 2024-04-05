@@ -2,7 +2,7 @@
 
 import { useSectionInView } from "@/hooks/useSectionInView";
 import SectionTitle from "./SectionTitle";
-import { skillsData } from "@/lib/data";
+import { toolsData } from "@/lib/data";
 import { motion } from "framer-motion";
 
 const fadeInAnimationVariants = {
@@ -30,9 +30,9 @@ const Tools = () => {
     >
       <SectionTitle>Tools i have used</SectionTitle>
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
-        {skillsData.map((skill, index) => (
+        {toolsData.map((tool, index) => (
           <motion.li
-            className="bg-white border-black rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
+            className="bg-gray-100 border border-black/5 rounded-xl px-5 py-3 dark:bg-white/10 dark:text-gray-100"
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
@@ -42,7 +42,8 @@ const Tools = () => {
             }}
             custom={index}
           >
-            {skill}
+            <span className="flex flex-col items-center">{tool.icon}</span>
+            {tool.name}
           </motion.li>
         ))}
       </ul>

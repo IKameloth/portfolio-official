@@ -1,6 +1,39 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import {
+  FaBootstrap,
+  FaCss3,
+  FaGit,
+  FaHtml5,
+  FaJs,
+  FaNode,
+  FaReact,
+  FaTshirt,
+} from "react-icons/fa";
+import {
+  SiBootstrap,
+  SiBulma,
+  SiCss3,
+  SiExpress,
+  SiFramer,
+  SiGit,
+  SiHtml5,
+  SiJavascript,
+  SiJquery,
+  SiMongodb,
+  SiMui,
+  SiMysql,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiNotion,
+  SiPhp,
+  SiPostgresql,
+  SiReact,
+  SiRedux,
+  SiRuby,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "/public/corpcomment.png";
 import rmtdevImg from "/public/rmtdev.png";
@@ -84,24 +117,93 @@ export const projectsData = [
   },
 ] as const;
 
-export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
-  "Framer Motion",
+export const toolsData = [
+  {
+    name: "HTML",
+    icon: React.createElement(SiHtml5),
+  },
+  {
+    name: "CSS",
+    icon: React.createElement(SiCss3),
+  },
+  {
+    name: "JavaScript",
+    icon: React.createElement(SiJavascript),
+  },
+  {
+    name: "TypeScript",
+    icon: React.createElement(SiTypescript),
+  },
+  {
+    name: "React",
+    icon: React.createElement(SiReact),
+  },
+  {
+    name: "Next.js",
+    icon: React.createElement(SiNextdotjs),
+  },
+  {
+    name: "Node.js",
+    icon: React.createElement(SiNodedotjs),
+  },
+  {
+    name: "Git",
+    icon: React.createElement(SiGit),
+  },
+  {
+    name: "Tailwind",
+    icon: React.createElement(SiTailwindcss),
+  },
+  {
+    name: "Bulma",
+    icon: React.createElement(SiBulma),
+  },
+  {
+    name: "Bootstrap",
+    icon: React.createElement(SiBootstrap),
+  },
+  {
+    name: "MaterialUI",
+    icon: React.createElement(SiMui),
+  },
+  {
+    name: "Redux",
+    icon: React.createElement(SiRedux),
+  },
+  {
+    name: "Express",
+    icon: React.createElement(SiExpress),
+  },
+  {
+    name: "MongoDB",
+    icon: React.createElement(SiMongodb),
+  },
+  {
+    name: "PostgreSQL",
+    icon: React.createElement(SiPostgresql),
+  },
+  {
+    name: "MySQL",
+    icon: React.createElement(SiMysql),
+  },
+  {
+    name: "Framer Motion",
+    icon: React.createElement(SiFramer),
+  },
+  {
+    name: "PHP",
+    icon: React.createElement(SiPhp),
+  },
+  {
+    name: "Ruby",
+    icon: React.createElement(SiRuby),
+  },
+  {
+    name: "JQuery",
+    icon: React.createElement(SiJquery),
+  },
+  {
+    name: "Notion",
+    icon: React.createElement(SiNotion),
+  },
 ] as const;

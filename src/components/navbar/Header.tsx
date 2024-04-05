@@ -53,17 +53,17 @@ const Header = () => {
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="sticky z-50 bg-white bg-opacity-80  dark:bg-gray-900 w-full top-0 start-0 inset-x-0 h-16 border-b border-gray-200 dark:border-gray-600"
+        className="sticky z-50 bg-gray-100 bg-opacity-95 dark:bg-gray-900 dark:bg-opacity-95 w-full top-0 start-0 inset-x-0 h-16 border-b border-gray-200 dark:border-gray-600"
       >
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between md:justify-evenly mx-auto p-3">
           <motion.nav
-            className="inline-flex items-center w-10 h-10 justify-center text-sm border border-slate-200 rounded-lg md:hidden hover:bg-gray-300  dark:bg-slate-700 dark:border dark:border-slate-500"
+            className="inline-flex items-center w-10 h-10 justify-center text-sm border border-gray-100 rounded-lg md:hidden hover:bg-gray-300  dark:bg-slate-700 dark:border dark:border-slate-500"
             initial={false}
             animate={isOpen ? "open" : "closed"}
             ref={navRef}
           >
             <motion.div
-              className="absolute top-0 left-0 -z-10 w-full h-auto bg-slate-200 dark:bg-slate-900"
+              className="absolute top-0 left-0 -z-10 w-full h-auto bg-gray-100 dark:bg-slate-900"
               variants={sidebar}
             >
               <Navigation onClose={toggleOpen} theme={theme} />
@@ -88,7 +88,7 @@ const Header = () => {
             <ThemeToggleButton className="flex items-center" />
           </div>
           <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
-            <ul className="flex flex-col p-4 md:p-0 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex flex-col p-4 md:p-0 font-medium border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
               {links.map((link) => (
                 <motion.li
                   className="flex items-center justify-center relative"
