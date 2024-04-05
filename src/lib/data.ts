@@ -1,16 +1,6 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import {
-  FaBootstrap,
-  FaCss3,
-  FaGit,
-  FaHtml5,
-  FaJs,
-  FaNode,
-  FaReact,
-  FaTshirt,
-} from "react-icons/fa";
-import {
   SiBootstrap,
   SiBulma,
   SiCss3,
@@ -28,13 +18,13 @@ import {
   SiNotion,
   SiPhp,
   SiPostgresql,
+  SiPostman,
   SiReact,
   SiRedux,
   SiRuby,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import { LuGraduationCap } from "react-icons/lu";
 import corpcommentImg from "/public/corpcomment.png";
 import rmtdevImg from "/public/rmtdev.png";
 import wordanalyticsImg from "/public/wordanalytics.png";
@@ -68,28 +58,36 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Software developer",
+    location: "Valparaiso, Chile",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2019",
-  },
-  {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
-    description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+      "Jumpitt Labs S.A. - MicroFrontend with ReactJS, Typescript, Redux, Antd. Others Web development using MaterialUI and Tailwind. API Gateway with NestJS, RubyOnRails and a litte bit of ReactNative in a mobile project.",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: "May 2022 - January 2024",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "Software developer",
+    location: "Santiago, Chile",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
+      "Autentia S.A. - Web development usign RubyOnRails, Javascript, Bulma, ReactJS and Typescript. Support for Rest API with SOAP services using RubyOnRails.",
+    icon: React.createElement(CgWorkAlt),
+    date: "September 2018 - May 2022",
+  },
+  {
+    title: "Backend developer",
+    location: "Valparaiso, Chile",
+    description:
+      "Jumpitt Labs S.A. - Web development usign PHP, Laravel5, vanilla Javascript and Bootstrap.",
+    icon: React.createElement(CgWorkAlt),
+    date: "December 2017 - September 2018",
+  },
+  {
+    title: "Junior developer",
+    location: "Vina del Mar, Chile",
+    description:
+      "Qality S.A. - Professional practice - Web development usign PHP, CodeIgniter, vanilla Javascript, Jquery, HTML and CSS.",
+    icon: React.createElement(CgWorkAlt),
+    date: "January 2017 - May 2017",
   },
 ] as const;
 
@@ -205,5 +203,9 @@ export const toolsData = [
   {
     name: "Notion",
     icon: React.createElement(SiNotion),
+  },
+  {
+    name: "Postman",
+    icon: React.createElement(SiPostman),
   },
 ] as const;

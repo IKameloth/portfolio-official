@@ -21,7 +21,7 @@ export default function About() {
         After graduating I enrolled myself in the world of programming and
         learned <span className="font-medium">Web Development</span>. My
         favorite part is the problem solving aspect. My main stack is{" "}
-        <span className="font-medium">React, Next.js, and Node.js</span>.
+        <span className="font-medium">React, Next.js and Node.js</span>.
         I&apos;m also familiar with TypeScript, Laravel and RoR. I am currently
         looking for a <span className="font-medium">full-time position</span> as
         a software developer.
