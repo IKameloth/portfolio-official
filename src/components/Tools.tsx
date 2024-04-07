@@ -4,6 +4,7 @@ import { useSectionInView } from "@/hooks/useSectionInView";
 import SectionTitle from "./SectionTitle";
 import { toolsData } from "@/lib/data";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -21,6 +22,7 @@ const fadeInAnimationVariants = {
 
 const Tools = () => {
   const { ref } = useSectionInView("Tools");
+  const t = useTranslations("Tools");
 
   return (
     <section
@@ -28,7 +30,7 @@ const Tools = () => {
       id="tools"
       className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
     >
-      <SectionTitle>Tools i have used</SectionTitle>
+      <SectionTitle>{t("title")}</SectionTitle>
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
         {toolsData.map((tool, index) => (
           <motion.li

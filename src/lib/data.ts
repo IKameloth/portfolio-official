@@ -1,5 +1,6 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
+
 import {
   SiBootstrap,
   SiBulma,
@@ -54,7 +55,7 @@ export const links = [
   },
 ] as const;
 
-export const experiencesData = [
+export const ExperiencesData = [
   {
     title: "Software developer",
     location: "Valparaiso, Chile",
@@ -87,7 +88,7 @@ export const experiencesData = [
     icon: React.createElement(CgWorkAlt),
     date: "January 2017 - May 2017",
   },
-] as const;
+];
 
 export const toolsData = [
   {

@@ -1,0 +1,63 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "tools": "Tools",
+    "contact": "Contact"
+  },
+  "Index": {
+    "title": "Hi! I'm Camilo Matteo. I'm a Web Developer with +5 years of experience. Passionate about writing code and building sites & apps.",
+    "contact_me": "Contact me",
+    "download": "Donwload"
+  },
+  "About": {
+    "title": "About me",
+    "paragraph_one": "After graduating I enrolled myself in the world of programming and learned Web Development. My favorite part is the problem solving aspect. My main stack is React, Next.js and Node.js. I'm also familiar with TypeScript, Laravel and RoR. I am currently looking for a full-time position as a software developer.",
+    "paragraph_two": "When I'm not coding, I enjoy playing video games like Wow and playing with my dogs. I also enjoy learning new things. I am currently reading about Uncle Bob's book Code-Clean."
+  },
+  "Experience": {
+    "title": "Experience",
+    "last_job": {
+      "title": "Software Developer",
+      "description": "Jumpitt Labs S.A. - MicroFrontend with ReactJS, Typescript, Redux, Antd. Others Web development using MaterialUI and Tailwind. API Gateway with NestJS, RubyOnRails and a litte bit of ReactNative in a mobile project.",
+      "date": "May 2022 - January 2024",
+      "location": "Valparaiso, Chile"
+    },
+    "second_job": {
+      "title": "Software Developer",
+      "description": "Autentia S.A. - Web development usign RubyOnRails, Javascript, Bulma, ReactJS and Typescript. Support for Rest API with SOAP services using RubyOnRails.",
+      "date": "September 2018 - May 2022",
+      "location": "Santiago, Chile"
+    },
+    "third_job": {
+      "title": "Backend developer",
+      "description": "Jumpitt Labs S.A. - Web development usign PHP, Laravel5, vanilla Javascript and Bootstrap.",
+      "date": "December 2017 - September 2018",
+      "location": "Valparaiso, Chile"
+    },
+    "fourth_job": {
+      "title": "Junior developer",
+      "description": "Qality S.A. - Professional practice - Web development usign PHP, CodeIgniter, vanilla Javascript, Jquery, HTML and CSS.",
+      "date": "January 2017 - May 2017",
+      "location": "Vina del Mar, Chile"
+    }
+  },
+  "Projects": {
+    "title": "Projects"
+  },
+  "Tools": {
+    "title": "Tools i have used"
+  },
+  "Contact": {
+    "title": "Contact",
+    "description": "Please contact me directly at my contact or through this form.",
+    "email_placeholder": "Your email",
+    "message_placeholder": "Your message",
+    "btn_submit": "Submit"
+  },
+  "Footer": {
+    "title": "Made with 🫀 from Peñaflor 🇨🇱"
+  }
+}

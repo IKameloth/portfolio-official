@@ -13,6 +13,8 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 import { links } from "@/lib/data";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import LaguajeSelector from "./LaguajeSelector";
+import { useTranslations } from "next-intl";
 
 const sidebar = {
   open: (height = 800) => ({
@@ -37,6 +39,7 @@ const sidebar = {
 const Header = () => {
   const { theme } = useTheme();
   const [isOpen, toggleOpen] = useCycle(false, true);
+  const t = useTranslations("Navbar");
 
   const handleOffLinks = () => {
     if (isOpen) return toggleOpen();
@@ -75,7 +78,7 @@ const Header = () => {
           </motion.nav>
           <motion.a
             whileTap={{ scale: 0.9 }}
-            href="/#home"
+            href="#home"
             className="hidden md:flex items-center space-x-3 rtl:space-x-reverse"
           >
             {theme === "light" ? (
@@ -84,8 +87,13 @@ const Header = () => {
               <LogoIconDark className="w-[2.25rem] h-[2.25rem] rounded-full dark:bg-gray-100" />
             )}
           </motion.a>
-          <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <ThemeToggleButton className="flex items-center" />
+          <div className="flex space-x-5 md:order-2">
+            <div className="flex md:order-2 rtl:space-x-reverse">
+              <ThemeToggleButton className="flex items-center" />
+            </div>
+            <div className="flex md:order-3 rtl:space-x-reverse">
+              <LaguajeSelector />
+            </div>
           </div>
           <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
             <ul className="flex flex-col p-4 md:p-0 font-medium border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
@@ -110,7 +118,7 @@ const Header = () => {
                       setTimeOfLastClick(Date.now());
                     }}
                   >
-                    {link.name}
+                    {t(link.name.toLocaleLowerCase())}
                     {link.name === activeSection && (
                       <motion.span
                         className="rounded-full absolute inset-0 bg-gray-800 dark:bg-gray-100 h-1 mt-6"

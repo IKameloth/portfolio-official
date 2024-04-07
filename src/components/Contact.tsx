@@ -7,10 +7,12 @@ import { sendEmail } from "@/actions/sendEmail";
 import toast from "react-hot-toast";
 import SectionTitle from "./SectionTitle";
 import { FaPaperPlane } from "react-icons/fa6";
+import { useTranslations } from "next-intl";
 
 const Contact = () => {
   const { ref } = useSectionInView("Contact");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const t = useTranslations("Contact");
 
   const handleSendEmail = async (event: FormEvent<HTMLFormElement>) => {
     setIsLoading(true);
@@ -46,14 +48,13 @@ const Contact = () => {
         once: true,
       }}
     >
-      <SectionTitle>Contact me</SectionTitle>
+      <SectionTitle>{t("title")}</SectionTitle>
 
       <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Please contact me directly at{" "}
-        <a className="underline" href="mailto:matteo.camilo.k@gmail.com">
+        {/* <a className="underline" href="mailto:matteo.camilo.k@gmail.com">
           my contact
-        </a>{" "}
-        or through this form.
+        </a>{" "} */}
+        {t("description")}
       </p>
 
       <form
@@ -66,12 +67,12 @@ const Contact = () => {
           type="email"
           required
           maxLength={255}
-          placeholder="Your email"
+          placeholder={t("email_placeholder")}
         />
         <textarea
           className="h-52 my-3 rounded-lg bg-gray-50 border border-black/30 p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           name="message"
-          placeholder="Your message"
+          placeholder={t("message_placeholder")}
           required
           maxLength={500}
         />
@@ -84,7 +85,7 @@ const Contact = () => {
             <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
           ) : (
             <>
-              Submit{" "}
+              {t("btn_submit")}{" "}
               <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{" "}
             </>
           )}

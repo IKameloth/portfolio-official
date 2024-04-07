@@ -34,7 +34,7 @@ const UpButton = () => {
           scale: 0.5,
           borderRadius: "100%",
         }}
-        href="/#home"
+        href="#home"
         className="fixed rounded-full flex items-center justify-center bottom-5 right-5 bg-gray-200 dark:bg-slate-800 w-[3rem] h-[3rem] backdrop-blur-[0.5] border border-black/30 dark:border-slate-500 shadow-2xl"
       >
         <BsArrowUp className="text-lg" />

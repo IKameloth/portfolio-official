@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const variants = {
   open: {
@@ -20,6 +21,7 @@ const variants = {
 
 const MenuItem = (props: any) => {
   const { link, onClose } = props;
+  const t = useTranslations("Navbar");
 
   return (
     <motion.li
@@ -33,7 +35,7 @@ const MenuItem = (props: any) => {
         className="flex font-semibold text-lg h-full items-center justify-center"
         onClick={() => onClose()}
       >
-        {link.name}
+        {t(link.name.toLocaleLowerCase())}
       </a>
     </motion.li>
   );

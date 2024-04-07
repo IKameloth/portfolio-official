@@ -1,0 +1,67 @@
+{
+  "Navbar": {
+    "home": "Inicio",
+    "about": "Acerca",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "tools": "Herramientas",
+    "contact": "Contacto"
+  },
+  "Index": {
+    "title": "Hola! Soy Camilo Matteo. Desarrollador Web con +5 años de experiencia. Apasionado por codear y construir sitios & aplicaciones.",
+    "contact_me": "Contactar",
+    "download": "Descargar"
+  },
+  "About": {
+    "title": "Acerca de mi",
+    "paragraph_one": "Después de graduarme me sumergí en el mundo de la programación y aprendí Desarrollo Web. Mi parte favorita es el aspecto de resolución de problemas. Mi pila principal es React, NextJS y NodeJS. También estoy familiarizado con TypeScript, Laravel y RoR. Actualmente estoy buscando un puesto a tiempo completo como desarrollador de software.",
+    "paragraph_two": "Cuando no estoy programando, disfruto jugando videojuegos como Wow y jugando con mis perros. También disfruto aprendiendo cosas nuevas. Actualmente estoy leyendo sobre el libro Code-Clean del tío Bob."
+  },
+  "Experience": {
+    "title": "Experiencia",
+    "last_job": {
+      "title": "Desarrollador de Software",
+      "description": "Jumpitt Labs S.A. - MicroFrontend con ReactJS, Typescript, Redux, Antd. Otros desarrollos web usando MaterialUI y Tailwind. API Gateway con NestJS, RubyOnRails y un poco de ReactNative en un proyecto mobile.",
+      "date": "Mayo 2022 - Enero 2024",
+      "location": "Valparaíso, Chile"
+    },
+    "second_job": {
+      "title": "Desarrollador de Software",
+      "description": "Autentia S.A. - Desarrollo web usando RubyOnRails, Javascript, Bulma, ReactJS y Typescript. Soporte para una Rest API con servicios SOAP utilizando RubyOnRails.",
+      "date": "Septiembre 2018 - Mayo 2022",
+      "location": "Santiago, Chile"
+    },
+    "third_job": {
+      "title": "Desarrollador de Backend",
+      "description": "Jumpitt Labs S.A. - Desarrollo web y creación de API Rest con PHP, Laravel5, vanilla Javascript y Bootstrap.",
+      "date": "Diciembre 2017 - Septiembre 2018",
+      "location": "Valparaíso, Chile"
+    },
+    "fourth_job": {
+      "title": "Desarrollador Junior",
+      "description": "Qality S.A. - Practica profesional - Desarrollo web con PHP, CodeIgniter, Javascript, Jquery, HTML and CSS.",
+      "date": "Enero 2017 - Mayo 2017",
+      "location": "Viña del Mar, Chile"
+    }
+  },
+  "Projects": {
+    "title": "Proyectos",
+    "first_app": {
+      "title": "CorpComment",
+      "description": "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies."
+    }
+  },
+  "Tools": {
+    "title": "Herramientas que he usado"
+  },
+  "Contact": {
+    "title": "Contacto",
+    "description": "Póngase en contacto conmigo directamente en mi contacto o mediante este formulario.",
+    "email_placeholder": "Ingresar email",
+    "message_placeholder": "Ingresar mensaje",
+    "btn_submit": "Enviar"
+  },
+  "Footer": {
+    "title": "Hecho con 🫀 desde Peñaflor 🇨🇱"
+  }
+}

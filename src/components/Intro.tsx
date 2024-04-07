@@ -3,16 +3,17 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import { FaHandSparkles } from "react-icons/fa6";
 import Link from "next/link";
 import { BsArrowRight, BsDownload, BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/hooks/useSectionInView";
+import { useTranslations } from "next-intl";
 
 const Intro = () => {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const t = useTranslations("Index");
 
   return (
     <section
@@ -35,7 +36,7 @@ const Intro = () => {
               width={190}
               height={190}
               alt="Picture of the author"
-              className="w-42 h-42 rounded-full shadow-2xl "
+              className="w-auto h-auto rounded-full shadow-2xl"
               priority={true}
             />
           </motion.div>
@@ -46,11 +47,7 @@ const Intro = () => {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I&apos;m Camilo Matteo.</span>{" "}
-        I&apos;m a <span className="font-bold">Web Developer</span> with{" "}
-        <span className="font-bold">+5 years</span> of experience. Passionate
-        about writing code and building{" "}
-        <span className="italic">sites & apps</span>.
+        <span className="font-bold">{t("title")}</span>
       </motion.p>
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
@@ -66,7 +63,7 @@ const Intro = () => {
             setTimeOfLastClick(Date.now());
           }}
         >
-          Contact me{" "}
+          {t("contact_me")}{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition delay-100" />
         </Link>
         <a
@@ -74,7 +71,7 @@ const Intro = () => {
           download
           className="bg-white text-black px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer border border-black/10"
         >
-          Donwload CV{" "}
+          {t("download")} CV{" "}
           <BsDownload className="opacity-70 group-hover:translate-x-1 transition delay-100" />
         </a>
       </motion.div>
