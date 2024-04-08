@@ -27,14 +27,18 @@ export default function RootLayout({
   const messages = useMessages();
 
   return (
-    <html lang={locale} className="!scroll-smooth">
+    <html
+      lang={locale}
+      className="!scroll-smooth"
+      suppressHydrationWarning={true}
+    >
       <body
         className={`${inter.className} bg-gray-50 text-gray-950 relative dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
       >
         <BackgroundColor />
         <ThemeProvider>
           <ActiveSectionProvider>
-            <NextIntlClientProvider messages={messages}>
+            <NextIntlClientProvider locale={locale} messages={messages}>
               <Header />
               {children}
               <Footer />

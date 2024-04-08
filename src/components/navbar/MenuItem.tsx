@@ -31,7 +31,7 @@ const MenuItem = (props: any) => {
       whileTap={{ scale: 0.95 }}
     >
       <a
-        href={`/${link.hash}`}
+        href={`${link.hash}`}
         className="flex font-semibold text-lg h-full items-center justify-center"
         onClick={() => onClose()}
       >
